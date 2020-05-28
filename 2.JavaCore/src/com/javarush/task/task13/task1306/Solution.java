@@ -16,11 +16,12 @@ public class Solution {
     }
 
     interface DBObject {
-/*        DBObject initializeIdAndName(long id, String name) {
-            this.id = id;
-            this.name = name;
-            return this;}*/
-DBObject initializeIdAndName(long id, String name);
+        /*        DBObject initializeIdAndName(long id, String name) {
+                    this.id = id;
+                    this.name = name;
+                    return this;}*/
+
+        DBObject initializeIdAndName(long id, String name);
 
     }
 
@@ -38,7 +39,8 @@ DBObject initializeIdAndName(long id, String name);
         public User initializeIdAndName(long id, String name) {
             this.id = id;
             this.name = name;
-            return this;}
+            return this;
+        }
     }
 
 }
