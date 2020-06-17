@@ -19,6 +19,10 @@ public class Solution {
 
     public static void ourInterruptMethod() {
         //add your code here - добавь код тут
+
+        for (Thread thread : threads) {
+            thread.interrupt();
+        }
     }
 
     private static void initThreadsAndStart() {
@@ -28,7 +32,8 @@ public class Solution {
         }
 
         for (int i = 0; i < threadCount; i++) {
-            threads.get(i).start();
+            threads.get(i)
+                    .start();
         }
     }
 
@@ -41,8 +46,10 @@ public class Solution {
 
         public void run() {
             //fix 2 variables - исправь 2 переменных
-            boolean isCurrentThreadInterrupted = false;
-            String threadName = "";
+            // boolean isCurrentThreadInterrupted = false;
+            boolean isCurrentThreadInterrupted = Thread.currentThread().isInterrupted();
+         //   String threadName = "";
+            String threadName = Thread.currentThread().getName();
 
             try {
                 while (!isCurrentThreadInterrupted) {
